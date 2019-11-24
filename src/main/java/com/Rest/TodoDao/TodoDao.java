@@ -19,8 +19,10 @@ public class TodoDao {
 	public List<TodoListItems> findAll(){
 		return events;
 	}
-	public void save(String taskTitle, Date addedOn, Date remindMeAt, String taskDetail) {
-		events.add(new TodoListItems("ayaan birthday", new Date(), new Date(), "celebration at florida", countOfEvents++));
+	public TodoListItems save(TodoListItems items) {
+		items.setId(++countOfEvents);
+		events.add(items);
+		return items;
 	}
 	public TodoListItems findOne(int id) {
 		for (TodoListItems x:events) {

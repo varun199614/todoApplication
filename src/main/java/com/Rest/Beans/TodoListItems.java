@@ -8,7 +8,9 @@ public class TodoListItems {
 	private Date remindMeAt;
 	private String taskDetail;
 	private int id;
-	
+	public TodoListItems() {
+
+	}
 	public TodoListItems(String taskTitle, Date addedOn, Date remindMeAt, String taskDetail, int id) {
 		super();
 		this.taskTitle = taskTitle;
