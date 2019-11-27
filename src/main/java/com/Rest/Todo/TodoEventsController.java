@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,10 @@ public class TodoEventsController {
 	public TodoListItems findOne(@PathVariable int id){
 		return DaoService.findOne(id);
 	}
+	@DeleteMapping("DeleteEvent/{id}")
+	public void delete(@PathVariable int id){
+		 DaoService.delete(id);
+	} 
 	@PostMapping("/AddingEven")
 	public ResponseEntity<Object> AddingTodo(@RequestBody TodoListItems event) {
 		
