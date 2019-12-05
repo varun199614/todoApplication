@@ -1,12 +1,19 @@
 package com.Rest.Beans;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+
+@Entity
 public class TodoListItems {
 	private String taskTitle;
 	private Date addedOn;
 	private Date remindMeAt;
 	private String taskDetail;
+	@Id
+	@GeneratedValue
 	private int id;
 	public TodoListItems() {
 
